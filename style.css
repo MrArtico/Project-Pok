@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+form{
+    display: none;
+}
+
 .criacaoPokemon{
     display: flex;
     flex-direction: column;
@@ -11,6 +15,7 @@
 }
 
 #layoutRadios{
+    margin: 10px;
     flex-direction: row;
     width: 12vw;
 }
