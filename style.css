@@ -3,10 +3,6 @@
     margin: 0;
 }
 
-form{
-    display: none;
-}
-
 .gridPok{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
