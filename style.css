@@ -25,7 +25,7 @@ main{
 
 #estilizarParagrafo{
     font-size: 15px;
-    color: rgb(189, 189, 189);
+    color: rgb(150, 150, 150);
 }
 
 .gridPok img{
@@ -67,4 +67,58 @@ main{
 
 #form{
     display: none;
+}
+
+#addPokemon{
+    border-style: none;
+    background-color: rgb(161, 161, 161);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 30px;
+}
+#addPokemon:hover{
+    background-color: rgb(196, 196, 196);
+    cursor: pointer;
+}
+#addPokemon:active{
+    background-color: grey;
+}
+
+.fire{
+    display: flex;
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.grass{
+    display: flex;
+    background-color: green;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    margin: 5px;
+}
+.poison{
+    display: flex;
+    background-color: purple;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    margin: 5px;
+}
+.water{
+    display: flex;
+    background-color: blue;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    margin: 5px;
 }
