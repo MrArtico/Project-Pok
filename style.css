@@ -3,12 +3,36 @@
     margin: 0;
 }
 
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#flatLogo{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+}
+
+.buttonsEdit{
+    border-style: none;
+    background: none;
+    color: white;
+    height: 10vh;
+    width: 10%;
+}
+
+.buttonsEdit:hover{
+    background-color: grey;
+}
+
 body{
     background-color: rgb(161, 161, 161);
 }
 
 main{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
 }
 
