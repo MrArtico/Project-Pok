@@ -5,6 +5,7 @@ const buttonSubmit = document.getElementById('sendPokemon');
 const nome = document.getElementById('nomePokemon');
 const numeroPok = document.getElementById('numberPokemon');
 const url = document.getElementById('imgPokemon');
+const numeroPokedex = document.getElementsByClassName('estilizarParagrafo');
 
 pokemonButton.addEventListener('click', () => {
     // Esconde o botão e revela o formulário
@@ -31,10 +32,18 @@ function envioInfo() {
     img.setAttribute('alt', nome.value);
     Itens.textContent = nome.value;
     paragrafo.textContent = `Nº ${numeroPok.value}`;
-    paragrafo.setAttribute('id', 'estilizarParagrafo');
-    
-    
-    // Adição deles na página
+    paragrafo.setAttribute('class', 'estilizarParagrafo');
+
+    // Verifica se o número do Pokémon está sendo repetido
+    for(let i = 0; i < numeroPokedex.length; i++){
+        if(numeroPokedex[i].textContent == paragrafo.textContent){
+            console.log(numeroPokedex[i].textContent);
+            alert("Você precisa adicionar um número da Pokédex novo!");
+            return;
+        }
+    }
+
+    // Adição dos elementos na página
     Itens.appendChild(paragrafo);
     Itens.appendChild(img);
 
@@ -48,7 +57,14 @@ function envioInfo() {
         tipoItem.textContent = tipoSelecionado[i].value;
         tipoItem.setAttribute('class', tipoSelecionado[i].value.toLowerCase());
         Itens.appendChild(tipoItem);
+        // Desmarca todas as opções anteriormente marcadas
+        tipoSelecionado[i].checked = false;
     }
-
     pokedexLista.appendChild(Itens);
+
+    // Esvazia o formulário
+    nome.value = '';
+    numeroPok.value = '';
+    url.value = '';
+
 }
