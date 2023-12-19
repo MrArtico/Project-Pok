@@ -23,7 +23,7 @@ main{
     list-style-type: none;
 }
 
-#estilizarParagrafo{
+.estilizarParagrafo{
     font-size: 15px;
     color: rgb(150, 150, 150);
 }
