@@ -9,7 +9,28 @@ header{
     align-items: center;
 }
 
-#flatLogo{
+body{
+    background-color: rgb(161, 161, 161);
+}
+
+main{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.flatLogo{
     height: 50px;
     width: 50px;
     padding: 10px;
@@ -25,15 +46,6 @@ header{
 
 .buttonsEdit:hover{
     background-color: grey;
-}
-
-body{
-    background-color: rgb(161, 161, 161);
-}
-
-main{
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
 }
 
 .gridPok{
@@ -53,14 +65,14 @@ main{
 }
 
 .gridPok img{
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     border-radius: 10px;
 }
 
 .gridPok li{
     background-color: rgba(153, 153, 153, 0.274);
-    width: 50%;
+    width: 200px;
     padding: 10px;
     border-radius: 20px;
     font-size: 30px;
@@ -68,14 +80,56 @@ main{
     font-family: system-ui;
 }
 
-.criacaoPokemon{
+.fire{
     display: flex;
-    flex-direction: column;
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 5px;
+}
+.grass{
+    display: flex;
+    background-color: green;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.poison{
+    display: flex;
+    background-color: purple;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.water{
+    display: flex;
+    background-color: blue;
+    border-radius: 30px;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    align-items: center;
+    margin: 5px;
 }
 
-#layoutRadios{
+#form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+#layoutCheck{
     margin: 10px;
     flex-direction: row;
     width: 12vw;
@@ -87,10 +141,6 @@ main{
     position: relative;
     justify-content: center;
     align-items: center;
-}
-
-#form{
-    display: none;
 }
 
 #addPokemon{
@@ -107,42 +157,4 @@ main{
 }
 #addPokemon:active{
     background-color: grey;
-}
-
-.fire{
-    display: flex;
-    background-color: red;
-    border-radius: 30px;
-    color: white;
-    font-size: 10px;
-    justify-content: center;
-    margin: 10px;
-}
-
-.grass{
-    display: flex;
-    background-color: green;
-    border-radius: 30px;
-    color: white;
-    font-size: 10px;
-    justify-content: center;
-    margin: 5px;
-}
-.poison{
-    display: flex;
-    background-color: purple;
-    border-radius: 30px;
-    color: white;
-    font-size: 10px;
-    justify-content: center;
-    margin: 5px;
-}
-.water{
-    display: flex;
-    background-color: blue;
-    border-radius: 30px;
-    color: white;
-    font-size: 10px;
-    justify-content: center;
-    margin: 5px;
 }

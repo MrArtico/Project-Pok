@@ -1,4 +1,5 @@
 const pokemonButton = document.getElementById('addPokemon');
+const divPokemonButton = document.getElementById('botaoPokemon');
 const formulario = document.getElementById('form');
 const pokedexLista = document.getElementById('listagem');
 const buttonSubmit = document.getElementById('sendPokemon');
@@ -10,12 +11,11 @@ const numeroPokedex = document.getElementsByClassName('estilizarParagrafo');
 pokemonButton.addEventListener('click', () => {
     // Esconde o botão e revela o formulário
     formulario.style.display = 'flex';
-    formulario.style.flexDirection = 'column';
-    formulario.style.alignItems = 'center';
-    pokemonButton.style.display = 'none';
+    divPokemonButton.remove();
 })
 
 buttonSubmit.addEventListener('click', () => envioInfo());
+
 function envioInfo() {
     // Verifica os inputs
     if(nome.value == '' || numeroPok.value == '' || url.value == ''){
