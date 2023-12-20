@@ -1,20 +1,30 @@
+const mainDiv = document.getElementById('mainDiv');
 const pokemonButton = document.getElementById('addPokemon');
-const divPokemonButton = document.getElementById('botaoPokemon');
+const divPokemonButton = document.getElementById('divPokemonButton');
 const formulario = document.getElementById('form');
 const pokedexLista = document.getElementById('listagem');
 const buttonSubmit = document.getElementById('sendPokemon');
 const nome = document.getElementById('nomePokemon');
 const numeroPok = document.getElementById('numberPokemon');
 const url = document.getElementById('imgPokemon');
+const esconderFormulario = document.getElementById('voltarMenu');
 const numeroPokedex = document.getElementsByClassName('estilizarParagrafo');
 
 pokemonButton.addEventListener('click', () => {
     // Esconde o botão e revela o formulário
-    formulario.style.display = 'flex';
+    formulario.removeAttribute('id', 'form');
+    formulario.setAttribute('class', 'formularioStyle');
     divPokemonButton.remove();
-})
+});
 
 buttonSubmit.addEventListener('click', () => envioInfo());
+
+esconderFormulario.addEventListener('click', () => {
+    // Retorna ao menu inicial sem o formulário
+    formulario.removeAttribute('class', 'formularioStyle');
+    formulario.setAttribute('id', 'form');
+    mainDiv.appendChild(divPokemonButton);
+});
 
 function envioInfo() {
     // Verifica os inputs

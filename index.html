@@ -17,25 +17,29 @@
     <main>
         <div>
             <ul class="gridPok" id="listagem">
-
+        
             </ul>
         </div>
-        <div id="form">
-            <input type="text" placeholder="Nome do Pokémon..." id="nomePokemon"><br>
-            <input type="number" placeholder="Número da Pokédex..." id="numberPokemon"><br>
-            <input type="text" placeholder="URL da imagem" id="imgPokemon">
-
-            <div id="layoutCheck">
-                <input type="checkbox" name="tipoPokemon" value="Poison" class="tipos"> Poison<br>
-                <input type="checkbox" name="tipoPokemon" value="Grass" class="tipos"> Grass<br>
-                <input type="checkbox" name="tipoPokemon" value="Fire" class="tipos"> Fire<br>
-                <input type="checkbox" name="tipoPokemon" value="Water" class="tipos"> Water
+        <div id="mainDiv">
+            <div id="form">
+                <input type="text" placeholder="Nome do Pokémon..." id="nomePokemon"><br>
+                <input type="number" placeholder="Número da Pokédex..." id="numberPokemon"><br>
+                <input type="text" placeholder="URL da imagem" id="imgPokemon">
+    
+                <div id="layoutCheck">
+                    <input type="checkbox" name="tipoPokemon" value="Poison" class="tipos"> Poison<br>
+                    <input type="checkbox" name="tipoPokemon" value="Grass" class="tipos"> Grass<br>
+                    <input type="checkbox" name="tipoPokemon" value="Fire" class="tipos"> Fire<br>
+                    <input type="checkbox" name="tipoPokemon" value="Water" class="tipos"> Water
+                </div>
+                <div class="layoutButtons">
+                    <button id="sendPokemon">Enviar Pokémon!</button>
+                    <button id="voltarMenu">Fechar Formulário</button>
+                </div>
             </div>
-            
-            <button id="sendPokemon">Enviar Pokémon!</button>
-        </div>
-        <div id="botaoPokemon">
-            <button id="addPokemon">Adicione um Pokémon!</button>
+            <div class="botaoPokemon" id="divPokemonButton">
+                <button id="addPokemon">Adicione um Pokémon!</button>
+            </div>
         </div>
     </main>
     <footer>
