@@ -3,12 +3,17 @@
     margin: 0;
 }
 
+::placeholder{
+    color: white;
+    opacity: 1;
+}
+
 body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 150px;
     height: 100vh;
-    
+    overflow-x: hidden;
 }
 header{
     display: flex;
@@ -24,6 +29,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 30px;
+    gap: 20px;
 }
 footer{
     width: 100vw;
@@ -33,6 +39,46 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: grey;
+}
+
+.layoutInputs{
+    border-style: none;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.layoutButtons{
+    border-style: none;
+    background-color: rgb(180, 180, 180);
+    padding: 10px;
+    border-radius: 30px;
+}
+.layoutButtons:hover{
+    background-color: white;
+    cursor: pointer;
+}
+.layoutButtons:active{
+    background-color: grey;
+}
+
+.buttonsEdit{
+    border-style: none;
+    background: none;
+    color: white;
+    padding: 39px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.buttonsEdit:hover{
+    border-style: none;
+    background-color: rgb(100, 100, 100);
+    padding: 39px;
+    cursor: pointer;
+}
+.buttonsEdit:active{
+    background-color: white;
+    color: black;
 }
 
 .gridPok{
