@@ -9,6 +9,7 @@ const numeroPok = document.getElementById('numberPokemon');
 const url = document.getElementById('imgPokemon');
 const esconderFormulario = document.getElementById('voltarMenu');
 const numeroPokedex = document.getElementsByClassName('estilizarParagrafo');
+let idContagem = 0;
 
 pokemonButton.addEventListener('click', () => {
     // Esconde o botão e revela o formulário
@@ -27,9 +28,17 @@ esconderFormulario.addEventListener('click', () => {
 });
 
 function envioInfo() {
+    const tipoSelecionado = document.querySelectorAll('input[name="tipoPokemon"]:checked');
+
     // Verifica os inputs se estão vazios
     if(nome.value == '' || numeroPok.value == '' || url.value == ''){
         alert('Erro! Adicione algo aos campos!');
+        return;
+    }
+    
+    // Verifica se ao menos um tipo de pokémon foi selecionado
+    if(tipoSelecionado.length == 0){
+        alert("Adicione ao menos um tipo de Pokémon!");
         return;
     }
     
@@ -37,13 +46,13 @@ function envioInfo() {
     const Itens = document.createElement('li');
     const paragrafo = document.createElement('p');
     const img = document.createElement('img');
-    const tipoSelecionado = document.querySelectorAll('input[name="tipoPokemon"]:checked');
+    const buttonRemover = document.createElement('button');
     img.setAttribute('src', url.value);
     img.setAttribute('alt', nome.value);
     Itens.textContent = nome.value;
     paragrafo.textContent = `Nº ${numeroPok.value}`;
     paragrafo.setAttribute('class', 'estilizarParagrafo');
-
+    
     // Verifica se o número do Pokémon está sendo repetido
     for(let i = 0; i < numeroPokedex.length; i++){
         if(numeroPokedex[i].textContent == paragrafo.textContent){
@@ -51,17 +60,14 @@ function envioInfo() {
             return;
         }
     }
+    Itens.setAttribute('id', `${++idContagem}`);
+    buttonRemover.textContent = `Remover Pokémon ${idContagem}`;
+    buttonRemover.setAttribute('class', 'removerPokemon');
 
     // Adição dos elementos na página
     Itens.appendChild(paragrafo);
     Itens.appendChild(img);
-
-    // Verifica se ao menos um tipo de pokémon foi selecionado
-    if(tipoSelecionado.length == 0){
-        alert("Adicione ao menos um tipo de Pokémon!");
-        return;
-    }
-
+    
     // Passa o tipo selecionado para um parágrafo juntamente com a sua classe CSS estilizada
     for(let i = 0; i < tipoSelecionado.length; i++){
         const tipoItem = document.createElement('p');
@@ -71,11 +77,14 @@ function envioInfo() {
         // Desmarca todas as opções anteriormente marcadas
         tipoSelecionado[i].checked = false;
     }
+    Itens.appendChild(buttonRemover);
     pokedexLista.appendChild(Itens);
+    buttonRemover.addEventListener('click', () => {
+        Itens.remove();
+    });
 
     // Esvazia o formulário
     nome.value = '';
     numeroPok.value = '';
     url.value = '';
-
 }
