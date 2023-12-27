@@ -1,4 +1,4 @@
-const mainDiv = document.getElementById('mainDiv');
+const formDiv = document.getElementById('formDiv');
 const pokemonButton = document.getElementById('addPokemon');
 const divPokemonButton = document.getElementById('divPokemonButton');
 const formulario = document.getElementById('form');
@@ -23,11 +23,11 @@ esconderFormulario.addEventListener('click', () => {
     // Retorna ao menu inicial sem o formulário
     formulario.removeAttribute('class', 'formularioStyle');
     formulario.setAttribute('id', 'form');
-    mainDiv.appendChild(divPokemonButton);
+    formDiv.appendChild(divPokemonButton);
 });
 
 function envioInfo() {
-    // Verifica os inputs
+    // Verifica os inputs se estão vazios
     if(nome.value == '' || numeroPok.value == '' || url.value == ''){
         alert('Erro! Adicione algo aos campos!');
         return;
@@ -47,7 +47,6 @@ function envioInfo() {
     // Verifica se o número do Pokémon está sendo repetido
     for(let i = 0; i < numeroPokedex.length; i++){
         if(numeroPokedex[i].textContent == paragrafo.textContent){
-            console.log(numeroPokedex[i].textContent);
             alert("Você precisa adicionar um número da Pokédex novo!");
             return;
         }
@@ -57,11 +56,13 @@ function envioInfo() {
     Itens.appendChild(paragrafo);
     Itens.appendChild(img);
 
+    // Verifica se ao menos um tipo de pokémon foi selecionado
     if(tipoSelecionado.length == 0){
         alert("Adicione ao menos um tipo de Pokémon!");
         return;
     }
 
+    // Passa o tipo selecionado para um parágrafo juntamente com a sua classe CSS estilizada
     for(let i = 0; i < tipoSelecionado.length; i++){
         const tipoItem = document.createElement('p');
         tipoItem.textContent = tipoSelecionado[i].value;
