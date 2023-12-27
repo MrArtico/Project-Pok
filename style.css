@@ -48,6 +48,22 @@ footer{
     border-radius: 30px;
 }
 
+.removerPokemon{
+    border-style: none;
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+}
+.removerPokemon:hover{
+    cursor: pointer;
+    background-color: rgb(255, 56, 56);
+}
+.removerPokemon:active{
+    background-color: white;
+    color: black;
+}
+
 .layoutButtons{
     border-style: none;
     background-color: rgb(180, 180, 180);
